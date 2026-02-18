@@ -1,0 +1,678 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>משרד עו"ד רפי צ'סטר | משרד עורכי דין</title>
+  <meta name="description" content="בית - משרד עו" ד="" רפי="" צ'סטר="" provides="" professional="" שירותים="" משפטיים="" services.="" specializing="" in="" משרד="" עורכי="" דין."="">
+  <meta name="keywords" content="משרד עורכי דין, עורך דין למשקיעי נדל" ן,="" ייעוץ="" משפטי="" להשקעות="" נדל"ן,="" עורך="" דין="" רפי="" צ'סטר"="">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="משרד עו" ד="" רפי="" צ'סטר="" |="" משרד="" עורכי="" דין"="">
+  <meta property="og:description" content="בית - משרד עו" ד="" רפי="" צ'סטר="" provides="" professional="" שירותים="" משפטיים="" services.="" specializing="" in="" משרד="" עורכי="" דין."="">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="משרד עו" ד="" רפי="" צ'סטר="" |="" משרד="" עורכי="" דין"="">
+  <meta name="twitter:description" content="בית - משרד עו" ד="" רפי="" צ'סטר="" provides="" professional="" שירותים="" משפטיים="" services.="" specializing="" in="" משרד="" עורכי="" דין."="">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'c61831b7-4636-4a01-ac8f-27329d6c1df2',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; background: transparent !important; border: none !important; cursor: pointer !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+</head>
+<body>
+  <nav class="navbar" dir="rtl">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+  
+  <button class="phone-header-btn" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+  
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="/" class="logo-link">
+        <img src="/assets/logo.webp" alt="משרד עו&quot;ד רפי צ&#39;סטר" class="logo" />
+      </a>
+    </div>
+    
+    <ul class="nav-menu" id="navMenu"><li><a href="/services">שירותים</a></li><li><a href="/process">תהליך</a></li></ul>
+    
+    <div class="nav-cta-container">
+      <a href="/contact" class="nav-cta-btn">צור קשר</a>
+    </div>
+  </div>
+</nav>
+  
+  <main>
+    <section class="home-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-card">
+  <!-- Full-bleed background image -->
+  <img data-hero-bg="true" data-placeholder="home-hero-bg" data-context="Professional law office interior: elegant wooden desk with legal books, warm ambient lighting, sophisticated and trustworthy atmosphere, muted tones with navy blue and gold accents, high-end professional photography style" data-preserve-bg="0" width="1920" height="1080" src="/assets/site-home-hero-bg.webp" alt="משרד עורכי דין מקצועי" class="home-hero-bg">
+  
+  <!-- Scrim overlay for text legibility -->
+  <div class="home-hero-scrim" aria-hidden="true"></div>
+  
+  <!-- Overlay card with content -->
+  <div class="home-hero-overlay-card">
+    <h1>ייצוג משפטי אמין עם תהליך ברור ומסודר</h1>
+    <h3>אנחנו מספקים ליווי מקצועי, שמירה על סודיות מלאה ותהליך שקוף מהשיחה הראשונה ועד לסיום</h3>
+    
+    <div class="home-hero-cta-row">
+      <a href="#contact" class="btn-primary">צור קשר</a>
+      <a href="#services" class="btn-secondary">השירותים שלנו</a>
+    </div>
+    
+    <div class="home-hero-benefits">
+      <div class="home-hero-benefit-item">
+        <svg data-element-type="icon" data-icon-type="svg" class="home-hero-benefit-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <h3>הכוונה ברורה מהשיחה הראשונה</h3>
+        <p>אנחנו מסבירים בדיוק מה צריך ואיך התהליך נראה, בלי מונחים מסובכים</p>
+      </div>
+      
+      <div class="home-hero-benefit-item">
+        <svg data-element-type="icon" data-icon-type="svg" class="home-hero-benefit-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M16 13H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M16 17H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M10 9H9H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <h3>טיפול מדויק במסמכים</h3>
+        <p>כל מסמך נבדק בקפידה ומוגש בזמן, בלי טעויות או דחיות מיותרות</p>
+      </div>
+      
+      <div class="home-hero-benefit-item">
+        <svg data-element-type="icon" data-icon-type="svg" class="home-hero-benefit-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M9 9H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M9 13H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <h3>תקשורת רציפה וציפיות ריאליות</h3>
+        <p>אנחנו זמינים לשאלות ומעדכנים אותך בכל שלב, עם לוחות זמנים אמיתיים</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bottom divider: subtle angled paper-edge with gold keyline -->
+  <div class="home-hero-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="home-hero-gold-keyline" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#B08D57;stop-opacity:0.4"></stop>
+          <stop offset="50%" style="stop-color:#B08D57;stop-opacity:0.8"></stop>
+          <stop offset="100%" style="stop-color:#B08D57;stop-opacity:0.4"></stop>
+        </linearGradient>
+      </defs>
+      <!-- Main fill area (bottom portion) -->
+      <path d="M0,60 L0,30 L1200,15 L1200,60 Z" fill="var(--bg-light)"></path>
+      <!-- Gold keyline on top edge -->
+      <path d="M0,30 L1200,15" stroke="url(#home-hero-gold-keyline)" stroke-width="1" fill="none"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="home-services-section" data-layout-spec="בית-services">
+  <div class="home-services-container">
+    <div class="home-services-header">
+      <h2>שירותים מותאמים לבהירות ולשקט נפשי</h2>
+      <p>ליווי משפטי מובנה ומסודר שמתאים לצרכים היומיומיים שלכם, בלי סיבוכים מיותרים.</p>
+    </div>
+    
+    <div class="home-services-grid">
+      <div class="home-services-card">
+        <div class="home-services-card-accent"></div>
+        <h3>ייעוץ ואבחון מקרה</h3>
+        <p>פגישת ייעוץ מקיפה לבחינת המצב המשפטי והמלצה על דרכי פעולה מיטביות.</p>
+        <p>קבלת תמונה ברורה של הזכויות והחובות שלכם, עם הסבר פשוט ומובנה.</p>
+        <p>הערכת סיכונים והזדמנויות בטרם קבלת החלטות משפטיות חשובות.</p>
+        <a href="#services" class="home-services-link">למידע נוסף על שירותי הייעוץ <i class="fas fa-arrow-left"></i></a>
+      </div>
+      
+      <div class="home-services-card">
+        <div class="home-services-card-accent"></div>
+        <h3>בדיקת חוזים ומסמכים</h3>
+        <p>סקירה מקצועית של חוזים, הסכמים ומסמכים משפטיים לפני החתימה.</p>
+        <p>זיהוי סעיפים בעייתיים, התראה על סיכונים נסתרים והצעת תיקונים.</p>
+        <p>הבנה מלאה של מה אתם חותמים עליו, בשפה פשוטה וברורה.</p>
+        <a href="#services" class="home-services-link">למידע נוסף על בדיקת חוזים <i class="fas fa-arrow-left"></i></a>
+      </div>
+      
+      <div class="home-services-card">
+        <div class="home-services-card-accent"></div>
+        <h3>ייצוג והתכתבויות</h3>
+        <p>ייצוג מקצועי מול גורמים משפטיים, רשויות וצדדים שלישיים.</p>
+        <p>ניהול התכתבויות רשמיות, מכתבי דרישה ותגובות משפטיות בשמכם.</p>
+        <p>הגנה על האינטרסים שלכם בכל שלב, עם תקשורת שוטפת ושקיפות מלאה.</p>
+        <a href="#services" class="home-services-link">למידע נוסף על שירותי הייצוג <i class="fas fa-arrow-left"></i></a>
+      </div>
+      
+      <div class="home-services-card">
+        <div class="home-services-card-accent"></div>
+        <h3>תמיכה בתביעות ומחלוקות</h3>
+        <p>ליווי מקצועי בהליכי תביעה, בוררות או גישור בין הצדדים.</p>
+        <p>הכנת טיעונים, איסוף ראיות וניהול התיק בצורה אסטרטגית ומסודרת.</p>
+        <p>מאמץ לפתרון יעיל ומהיר, תוך שמירה על הזכויות והאינטרסים שלכם.</p>
+        <a href="#services" class="home-services-link">למידע נוסף על תמיכה בתביעות <i class="fas fa-arrow-left"></i></a>
+      </div>
+      
+      <div class="home-services-card">
+        <div class="home-services-card-accent"></div>
+        <h3>שירותי נוטריון ואימות</h3>
+        <p>אישור חתימות, אימות מסמכים ותרגומים מוסמכים לצרכים משפטיים.</p>
+        <p>הכנת ייפויי כוח, הצהרות רשמיות ומסמכים נוטריוניים נדרשים.</p>
+        <p>שירות מהיר ומדויק לכל צורכי האימות והאישור המשפטיים שלכם.</p>
+        <a href="#services" class="home-services-link">למידע נוסף על שירותי נוטריון <i class="fas fa-arrow-left"></i></a>
+      </div>
+      
+      <div class="home-services-card">
+        <div class="home-services-card-accent"></div>
+        <h3>ליווי משפטי שוטף</h3>
+        <p>ייעוץ משפטי קבוע לעסקים ולפרטיים, עם זמינות ותגובה מהירה.</p>
+        <p>מענה לשאלות משפטיות יומיומיות, סקירת מסמכים והכוונה מקצועית.</p>
+        <p>שותפות ארוכת טווח שמבטיחה שקט נפשי ותמיכה רציפה בכל נושא משפטי.</p>
+        <a href="#services" class="home-services-link">למידע נוסף על ליווי שוטף <i class="fas fa-arrow-left"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="home-services-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="home-services-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#FBFAF7;stop-opacity:1"></stop>
+          <stop offset="100%" style="stop-color:#F2EFEA;stop-opacity:1"></stop>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="1200" height="59" fill="url(#home-services-gradient)"></rect>
+      <line x1="0" y1="59" x2="1200" y2="59" stroke="var(--primary)" stroke-width="1" opacity="0.2"></line>
+    </svg>
+  </div>
+</section>
+
+<section class="home-process-section" data-layout-spec="בית-process">
+  <div class="home-process-container">
+    <div class="home-process-content-column">
+      <h2 class="home-process-title">תהליך מסודר שמפחית אי-ודאות</h2>
+      <p class="home-process-intro">ברגע שפניתם למשרד, אנחנו מתחילים בתהליך ברור ושקוף שמאפשר לכם להבין בדיוק מה קורה בכל שלב.</p>
+      
+      <div class="home-process-steps">
+        <div class="home-process-step">
+          <div class="home-process-step-number">1</div>
+          <div class="home-process-step-content">
+            <h3 class="home-process-step-title">פנייה ראשונית ומיון מהיר</h3>
+            <p class="home-process-step-text">שיחה קצרה למיפוי המצב, הבנת הצרכים והערכה ראשונית של הנושא המשפטי.</p>
+          </div>
+        </div>
+        
+        <div class="home-process-step">
+          <div class="home-process-step-number">2</div>
+          <div class="home-process-step-content">
+            <h3 class="home-process-step-title">בדיקת מסמכים ומיפוי סיכונים</h3>
+            <p class="home-process-step-text">עיון מעמיק במסמכים, זיהוי נקודות בעייתיות והערכת החשיפה המשפטית.</p>
+          </div>
+        </div>
+        
+        <div class="home-process-step">
+          <div class="home-process-step-number">3</div>
+          <div class="home-process-step-content">
+            <h3 class="home-process-step-title">תכנית פעולה ותקשורת שוטפת</h3>
+            <p class="home-process-step-text">בניית אסטרטגיה ברורה, הסבר מפורט של השלבים ושמירה על קשר רציף לאורך הדרך.</p>
+          </div>
+        </div>
+        
+        <div class="home-process-step">
+          <div class="home-process-step-number">4</div>
+          <div class="home-process-step-content">
+            <h3 class="home-process-step-title">ביצוע ומעקב צמוד</h3>
+            <p class="home-process-step-text">יישום התכנית בשטח, מעקב אחר התקדמות ועדכונים שוטפים עד להשגת התוצאה.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="home-process-imagery-column">
+      <div class="home-process-image-wrapper">
+        <div class="home-process-paper-backplate"></div>
+        <img data-placeholder="home-process-image-1" data-context="Professional legal consultation scene: a clean meeting table with organized legal documents, a closed leather portfolio, and a modern office setting. The image should convey trust, organization, and professionalism for a law office specializing in real estate investment legal services. Natural lighting, neutral tones, sharp focus on the documents and table surface. No people visible, just the organized workspace." width="600" height="800" src="/assets/site-home-process-image-1.webp" alt="שולחן ישיבות מסודר עם מסמכים משפטיים">
+      </div>
+    </div>
+  </div>
+  
+  <div class="home-process-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,50 Q200,35 400,50 T800,50 Q1000,35 1200,50 L1200,80 Z" fill="var(--bg-dark)"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="home-testimonials-section" data-layout-spec="בית-testimonials">
+  <div class="home-testimonials-container">
+    <div class="home-testimonials-header">
+      <h2>לקוחות בוחרים בהדרכה שקטה וברורה</h2>
+      <p>אנו שומרים על סודיות מלאה ומתמקדים בתקשורת ממוקדת תוצאות לאורך כל התהליך המשפטי.</p>
+    </div>
+
+    <div class="home-testimonials-grid">
+      <article class="home-testimonial-card">
+        <div class="home-testimonial-stars">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="80" height="12" viewBox="0 0 80 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 0L7.34708 4.1459H11.7063L8.17963 6.7082L9.52671 10.8541L6 8.2918L2.47329 10.8541L3.82037 6.7082L0.293661 4.1459H4.65292L6 0Z" fill="var(--secondary)"></path>
+            <path d="M23 0L24.3471 4.1459H28.7063L25.1796 6.7082L26.5267 10.8541L23 8.2918L19.4733 10.8541L20.8204 6.7082L17.2937 4.1459H21.6529L23 0Z" fill="var(--secondary)"></path>
+            <path d="M40 0L41.3471 4.1459H45.7063L42.1796 6.7082L43.5267 10.8541L40 8.2918L36.4733 10.8541L37.8204 6.7082L34.2937 4.1459H38.6529L40 0Z" fill="var(--secondary)"></path>
+            <path d="M57 0L58.3471 4.1459H62.7063L59.1796 6.7082L60.5267 10.8541L57 8.2918L53.4733 10.8541L54.8204 6.7082L50.7937 4.1459H55.1529L57 0Z" fill="var(--secondary)"></path>
+            <path d="M74 0L75.3471 4.1459H79.7063L76.1796 6.7082L77.5267 10.8541L74 8.2918L70.4733 10.8541L71.8204 6.7082L67.7937 4.1459H72.1529L74 0Z" fill="var(--secondary)"></path>
+          </svg>
+        </div>
+        <h3>צעדים ברורים, ללא הפתעות</h3>
+        <p>"עבדתי עם משרד עו"ד רפי צ'סטר בעסקת נדל"ן מורכבת. התהליך היה שקוף לחלוטין, כל שלב הוסבר בפירוט ותמיד קיבלתי מענה מהיר. הרגשתי בטוח לאורך כל הדרך."</p>
+      </article>
+
+      <article class="home-testimonial-card">
+        <div class="home-testimonial-stars">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="80" height="12" viewBox="0 0 80 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 0L7.34708 4.1459H11.7063L8.17963 6.7082L9.52671 10.8541L6 8.2918L2.47329 10.8541L3.82037 6.7082L0.293661 4.1459H4.65292L6 0Z" fill="var(--secondary)"></path>
+            <path d="M23 0L24.3471 4.1459H28.7063L25.1796 6.7082L26.5267 10.8541L23 8.2918L19.4733 10.8541L20.8204 6.7082L17.2937 4.1459H21.6529L23 0Z" fill="var(--secondary)"></path>
+            <path d="M40 0L41.3471 4.1459H45.7063L42.1796 6.7082L43.5267 10.8541L40 8.2918L36.4733 10.8541L37.8204 6.7082L34.2937 4.1459H38.6529L40 0Z" fill="var(--secondary)"></path>
+            <path d="M57 0L58.3471 4.1459H62.7063L59.1796 6.7082L60.5267 10.8541L57 8.2918L53.4733 10.8541L54.8204 6.7082L50.7937 4.1459H55.1529L57 0Z" fill="var(--secondary)"></path>
+            <path d="M74 0L75.3471 4.1459H79.7063L76.1796 6.7082L77.5267 10.8541L74 8.2918L70.4733 10.8541L71.8204 6.7082L67.7937 4.1459H72.1529L74 0Z" fill="var(--secondary)"></path>
+          </svg>
+        </div>
+        <h3>ארגון ותקשורת מעולים</h3>
+        <p>"המשרד מאורגן בצורה יוצאת דופן. כל מסמך במקומו, כל פגישה מתוזמנת בדיוק, וכל שאלה שלי נענתה תוך זמן קצר. זה נתן לי שקט נפשי בתקופה מלחיצה."</p>
+      </article>
+
+      <article class="home-testimonial-card">
+        <div class="home-testimonial-stars">
+          <svg data-no-icon-edit="true" aria-hidden="true" width="80" height="12" viewBox="0 0 80 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 0L7.34708 4.1459H11.7063L8.17963 6.7082L9.52671 10.8541L6 8.2918L2.47329 10.8541L3.82037 6.7082L0.293661 4.1459H4.65292L6 0Z" fill="var(--secondary)"></path>
+            <path d="M23 0L24.3471 4.1459H28.7063L25.1796 6.7082L26.5267 10.8541L23 8.2918L19.4733 10.8541L20.8204 6.7082L17.2937 4.1459H21.6529L23 0Z" fill="var(--secondary)"></path>
+            <path d="M40 0L41.3471 4.1459H45.7063L42.1796 6.7082L43.5267 10.8541L40 8.2918L36.4733 10.8541L37.8204 6.7082L34.2937 4.1459H38.6529L40 0Z" fill="var(--secondary)"></path>
+            <path d="M57 0L58.3471 4.1459H62.7063L59.1796 6.7082L60.5267 10.8541L57 8.2918L53.4733 10.8541L54.8204 6.7082L50.7937 4.1459H55.1529L57 0Z" fill="var(--secondary)"></path>
+            <path d="M74 0L75.3471 4.1459H79.7063L76.1796 6.7082L77.5267 10.8541L74 8.2918L70.4733 10.8541L71.8204 6.7082L67.7937 4.1459H72.1529L74 0Z" fill="var(--secondary)"></path>
+          </svg>
+        </div>
+        <h3>אמינות ומקצועיות ללא פשרות</h3>
+        <p>"בחרתי במשרד עו"ד רפי צ'סטר בגלל המוניטין שלו, ולא התאכזבתי. הייעוץ היה מדויק, התהליך היה מסודר, והתוצאה הייתה בדיוק מה שציפיתי. ממליץ בחום."</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="home-testimonials-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 L0,30 L200,30 L220,30 L240,30 L260,30 L280,30 L300,30 L320,30 L340,30 L360,30 L380,30 L400,30 L420,30 L440,30 L460,30 L480,30 L500,30 L520,30 L540,30 L560,30 L580,30 L600,30 C610,30 620,30 630,30 C640,30 650,30 660,30 L680,30 L700,30 L720,30 L740,30 L760,30 L780,30 L800,30 L820,30 L840,30 L860,30 L880,30 L900,30 L920,30 L940,30 L960,30 L980,30 L1000,30 L1020,30 L1040,30 L1060,30 L1080,30 L1100,30 L1120,30 L1140,30 L1160,30 L1180,30 L1200,30 L1200,60 Z" fill="var(--secondary)" opacity="0.3"></path>
+      <circle cx="620" cy="30" r="2" fill="var(--secondary)"></circle>
+      <circle cx="640" cy="30" r="2" fill="var(--secondary)"></circle>
+      <circle cx="660" cy="30" r="2" fill="var(--secondary)"></circle>
+      <circle cx="680" cy="30" r="2" fill="var(--secondary)" opacity="0.7"></circle>
+      <circle cx="700" cy="30" r="2" fill="var(--secondary)" opacity="0.5"></circle>
+      <circle cx="720" cy="30" r="2" fill="var(--secondary)" opacity="0.3"></circle>
+      <circle cx="740" cy="30" r="2" fill="var(--secondary)" opacity="0.2"></circle>
+      <circle cx="760" cy="30" r="2" fill="var(--secondary)" opacity="0.1"></circle>
+    </svg>
+  </div>
+</section>
+
+<section class="home-cta-section" data-layout-spec="בית-cta">
+  <div class="home-cta-container">
+    <div class="home-cta-content">
+      <h2 class="home-cta-heading">הצעד הראשון מתחיל כאן</h2>
+      <p class="home-cta-description">מוזמנים ליצור קשר לשיחה ראשונית ולקבל תמונת מצב ברורה של השלבים הבאים. אנחנו כאן כדי להקשיב, להבין ולהציע מסלול משפטי מדויק שמתאים לצרכים שלכם.</p>
+      <a href="contact.html" class="home-cta-button btn-primary">צרו קשר עכשיו</a>
+    </div>
+    
+    <div class="home-cta-reassurance">
+      <div class="home-cta-reassurance-item">
+        <svg class="home-cta-icon" data-element-type="icon" data-icon-type="svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M16 8v8l5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <p class="home-cta-reassurance-text">מענה מהיר תוך 24 שעות</p>
+      </div>
+      
+      <div class="home-cta-reassurance-item">
+        <svg class="home-cta-icon" data-element-type="icon" data-icon-type="svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="9" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"></rect>
+          <path d="M10 9V7a6 6 0 0112 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+          <circle cx="16" cy="17" r="2" fill="currentColor"></circle>
+        </svg>
+        <p class="home-cta-reassurance-text">טיפול סודי ומקצועי מלא</p>
+      </div>
+      
+      <div class="home-cta-reassurance-item">
+        <svg class="home-cta-icon" data-element-type="icon" data-icon-type="svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 16l5 5 11-11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.5"></rect>
+        </svg>
+        <p class="home-cta-reassurance-text">רשימת הכנה פשוטה ומסודרת</p>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  
+  <footer class="site-footer"><div class="footer-container"><div class="footer-grid"><div class="footer-column footer-about"><img src="/assets/logo.webp" alt="משרד עו&quot;ד רפי צ&#39;סטר" class="logo" /><p class="footer-description">משרד עורכי דין מוביל המתמחה במתן שירותים משפטיים מקצועיים ואיכותיים ללקוחות פרטיים ועסקיים.</p><div class="social-links"><a href="[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-column footer-links"><h3>קישורים מהירים</h3><ul><li><a href="/services">שירותים</a></li><li><a href="/process">תהליך</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-column footer-contact"><h3>יצירת קשר</h3><ul class="contact-list"><li><i class="fas fa-envelope"></i><a href="mailto:[business_email]">[business_email]</a></li><li><i class="fas fa-phone"></i><a href="tel:[business_phone]">[business_phone]</a></li><li><a href="/"><i class="fas fa-map-marker-alt"></i><span>[business_address]</span></a></li></ul></div></div><div class="footer-bottom"><div class="footer-bottom-content"><div class="legal-links"><a href="/privacy">Privacy Policy</a><span class="separator">|</span><a href="/terms">Terms &amp; Conditions</a><span class="separator">|</span><a href="/accessibility">Accessibility</a></div><p class="copyright">© 2026 משרד עו"ד רפי צ"סטר. All rights reserved.</p><a href="https://zappy5.com" target="_blank" class="zappy-attribution">Generated by Zappy</a></div></div></div></footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <script src="/script.js"></script>
+
+    <div data-integration="accessibility:toolbar"></div>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+</body></html>
